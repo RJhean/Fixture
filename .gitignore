@@ -1,0 +1,4 @@
+000*.py
+db.sqlite3
+ve_*
+__pycache__

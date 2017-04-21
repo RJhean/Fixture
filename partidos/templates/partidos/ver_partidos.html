@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="OpenWebinars.net">
+
+    <title>Partidos </title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">s
+</head>
+<body>
+    <div class="container">
+        <h1>
+          Partidos a Jugarses
+        </h1>
+        {% for partido in partidos %}
+          {% cycle '<div class="row">' '' '' %}
+          <div class="col-md-4">
+            <h3><img width="65px" src="{{MEDIA_URL}}{{partido.local.bandera}}"> {{ partido.local }} - {{ partido.visitante }} <img width="65px" src="{{MEDIA_URL}}{{partido.visitante.bandera}}"></h3>
+            <p><span class="label label-primary">{{ partido.fecha }}</span></p>
+          </div>
+          {% cycle '' '' '</div>' %}
+        {% endfor %}
+
+    </div> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  
+</body>
+</html>
+  
